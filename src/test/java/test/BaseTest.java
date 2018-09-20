@@ -18,8 +18,8 @@ public class BaseTest {
         salonHomePage = new SalonHomePage(browser);
     }
 
-//    @AfterMethod
-//    public void afterMethod() {
-//        browser.close();
-//    }
+    @AfterMethod
+    public void afterMethod() {
+        browser.close();
+    }
 }

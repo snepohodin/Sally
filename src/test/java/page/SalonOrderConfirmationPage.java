@@ -20,4 +20,8 @@ public class SalonOrderConfirmationPage extends BasePage {
     public boolean isLoaded() {
         return  confirmationMessage.isDisplayed();
     }
+
+    public String getConfirmationMessageText () {
+        return confirmationMessage.getText();
+    }
 }

@@ -30,5 +30,6 @@ public class SalonSmokeTest extends BaseTest {
 
         SalonOrderConfirmationPage salonOrderConfirmationPage = salonPaymentPage.navigateToConfirmationPage("000");
         Assert.assertTrue(salonOrderConfirmationPage.isLoaded(),"Salon Confirmation Page is not loaded.");
+        Assert.assertEquals(salonOrderConfirmationPage.getConfirmationMessageText(),"Thank you for your order.","Wrong order confirmation message.");
     }
 }
