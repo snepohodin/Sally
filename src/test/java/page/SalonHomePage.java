@@ -24,8 +24,7 @@ public class SalonHomePage extends BasePage{
 
     public boolean isLoaded() {
         return logo.isDisplayed()
-                && getCurrentPageTitle().contains("Salon Products & Equipment | Professional Beauty | Salon Services")
-                && getCurrentPageUrl().contains("development-ukweb-sally.demandware.net/on/demandware.store/Sites-salon-services-Site");
+                && getCurrentPageUrl().contains("/home?lang=");
     }
 
     public SalonSearchListingPage navigateToSearchListingPage(String searchTerm) {

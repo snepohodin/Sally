@@ -32,7 +32,6 @@ public class SalonSearchListingPage extends BasePage {
 
     public boolean isLoaded() {
         return searchResultTextBar.isDisplayed()
-                && getCurrentPageTitle().contains("Salon Global Navigation")
-                && getCurrentPageUrl().contains("/s/salon-services/search?q=");
+                && getCurrentPageUrl().contains("search?q=");
     }
 }

@@ -20,6 +20,14 @@ public class SalonPaymentPage extends BasePage {
     @FindBy(xpath = "//button[@type='submit']")
     private WebElement submitOrderButton;
 
+    @FindBy(xpath = "//label[@for='is-PayPal']")
+    private WebElement paypalRadioButton;
+
+    @FindBy(xpath = "//a[@name='billing_save']")
+    private WebElement submitOrderViaPayPalButton;
+
+
+
     public SalonPaymentPage(WebDriver browser) {
         this.browser = browser;
         PageFactory.initElements(browser, this);
@@ -34,8 +42,13 @@ public class SalonPaymentPage extends BasePage {
         return new SalonOrderConfirmationPage(browser);
     }
 
+    public SalonPayPalCheckoutGuest navigateToPaypalGuestPage() {
+        paypalRadioButton.click();
+        submitOrderViaPayPalButton.click();
+        return new SalonPayPalCheckoutGuest(browser);
+    }
 
     public boolean isLoaded() {
-        return creditCardLabel.isDisplayed();
+        return creditCardLabel.isDisplayed() && paypalRadioButton.isDisplayed();
     }
 }

@@ -1,0 +1,16 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="Sally Salon smoke test suite" verbose="1" >
+    <test name="Salon UK locale" >
+        <parameter name="envURL" value="https://development-ukweb-sally.demandware.net/s/salon-services/home?lang=en_GB"/>
+        <classes>
+            <class name="test.SalonSmokeTest" />
+        </classes>
+    </test>
+    <test name="Salon IE locale" >
+        <parameter name="envURL" value="https://development-ukweb-sally.demandware.net/s/salon-services/home?lang=en_IE"/>
+        <classes>
+            <class name="test.SalonSmokeTest" />
+        </classes>
+    </test>
+</suite>

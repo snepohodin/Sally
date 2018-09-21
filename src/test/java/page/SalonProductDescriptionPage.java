@@ -34,6 +34,4 @@ public class SalonProductDescriptionPage extends BasePage {
                 && getCurrentPageTitle().contains("| Shampoo |")
                 && getCurrentPageUrl().contains("/hair-care-and-styling/shampoo/");
     }
-
-
 }
