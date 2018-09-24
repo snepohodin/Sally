@@ -10,6 +10,13 @@ public class SalonCartPage extends BasePage {
     @FindBy(xpath = "//button[@class='cart-actions_button cart-actions_proceed']")
     private WebElement proceedToCheckOutButton;
 
+    @FindBy(xpath = "//td[@class='order-total_value']")
+    private WebElement cartOrderTotalValue;
+
+    public String getCartOrderTotalValue() {
+        return cartOrderTotalValue.getText();
+    }
+
     public SalonCartPage(WebDriver browser) {
         this.browser = browser;
         PageFactory.initElements(browser, this);
@@ -25,4 +32,9 @@ public class SalonCartPage extends BasePage {
         proceedToCheckOutButton.click();
         return new SalonCheckoutLoginPage(browser);
     }
+
+//    public SalonCheckoutLoginPage navigateToCheckoutLoginPage() {
+//        proceedToCheckOutButton.click();
+//        return new SalonCheckoutLoginPage(browser);
+//    }
 }

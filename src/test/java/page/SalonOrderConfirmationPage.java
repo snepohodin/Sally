@@ -10,6 +10,12 @@ public class SalonOrderConfirmationPage extends BasePage {
     @FindBy(xpath = "//h1[@class='confirmation-title']")
     private WebElement confirmationMessage;
 
+    @FindBy(xpath = "//td[@class='order-total_value']")
+    private WebElement confirmationPageOrderTotalValue;
+
+    public String getOrderConfirmationOrderTotalValue() {
+        return confirmationPageOrderTotalValue.getText();
+    }
 
     public SalonOrderConfirmationPage(WebDriver browser) {
         this.browser = browser;

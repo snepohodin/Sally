@@ -17,6 +17,7 @@ public class SalonSmokeTest extends BaseTest {
         Assert.assertTrue(salonProductDescriptionPage.isLoaded(),"Salon Product Description Page is not loaded.");
 
         SalonCartPage salonCartPage = salonProductDescriptionPage.navigateToCart();
+        String cartOrderTotal = salonCartPage.getCartOrderTotalValue();
         Assert.assertTrue(salonCartPage.isLoaded(),"Salon Cart Page is not loaded.");
 
         SalonCheckoutLoginPage salonCheckoutLoginPage = salonCartPage.navigateToCheckoutLoginPage();
@@ -29,8 +30,11 @@ public class SalonSmokeTest extends BaseTest {
         Assert.assertTrue(salonPaymentPage.isLoaded(),"Salon Payment Page is not loaded. CC flow.");
 
         SalonOrderConfirmationPage salonOrderConfirmationPage = salonPaymentPage.navigateToConfirmationPage("000");
+        String orderConfirmationOrderTotalValue = salonOrderConfirmationPage.getOrderConfirmationOrderTotalValue();
+
         Assert.assertTrue(salonOrderConfirmationPage.isLoaded(),"Salon Confirmation Page is not loaded.");
         Assert.assertEquals(salonOrderConfirmationPage.getConfirmationMessageText(),"Thank you for your order.","Wrong order confirmation message. CC flow.");
+        Assert.assertEquals(cartOrderTotal,orderConfirmationOrderTotalValue,"Cart order total and order confirmation total is not the same.");
     }
 
     @Test
